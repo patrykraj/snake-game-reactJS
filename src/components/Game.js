@@ -166,8 +166,6 @@ class Game extends Component {
 
     return (
       <div className="wrapper">
-        <h1>Score: {this.state.score}</h1>
-        <h3>Best score: {this.state.bestScore}</h3>
         <div
           tabIndex={0}
           onKeyDown={this.changeDirection}
@@ -176,6 +174,10 @@ class Game extends Component {
         >
           <Cells board={this.state.board} />
           {this.state.gameOver ? <EndGame restart={this.restart} /> : null}
+        </div>
+        <div className="wrapper--score">
+          <h1>Score: {this.state.score}</h1>
+          <h3>Best score: {this.state.bestScore}</h3>
         </div>
       </div>
     );
